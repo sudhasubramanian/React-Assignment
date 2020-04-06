@@ -1,0 +1,49 @@
+<html>
+
+  <head>
+    <div><b>object Copy:</b></div>
+    <p id="result"></p>
+  </head>
+
+  <body>
+    <script>
+      let object1 = {
+        expanded: false,
+        name: "3",
+        fields: [{
+            columnname: "projectName",
+            datatype: "String",
+            nullable: "true"
+          },
+          {
+            columnname: "artifactId",
+            datatype: "String",
+            nullable: "true"
+          },
+          {
+            columnname: "groupId",
+            datatype: "String",
+            nullable: "true"
+          }
+        ]
+      };
+      /*  A shallow copy will duplicate the top-level properties, but the nested object is shared between the original(source) and the copy(target). */
+      let result = Object.assign(object1); ///Shallow Copy
+      /* 
+      A deep copy will duplicate every object it encounters. The copy and the original object will not share anything, so it will be a copy of the original */
+
+      function cloneObject(object1) {
+        var clone = {};
+        for (var i in object1) {
+          if (object1[i] != null && typeof(object1[i]) == "object")
+            clone[i] = cloneObject(object1[i]);
+          else
+            clone[i] = object1[i];
+        }
+        return clone;
+      }
+
+    </script>
+  </body>
+
+</html>
