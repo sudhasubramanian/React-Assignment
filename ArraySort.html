@@ -1,0 +1,68 @@
+<html>
+
+  <head>
+    <div><b>Sorted values:</b></div>
+    <div id="disp">Click the button below to sort.</div>
+  </head>
+
+  <body>
+    <script>
+      let arrObj = [{
+          empId: "1",
+          empName: "shivam",
+          empSkillSet: "novice Java developer",
+          empJobBand: "2"
+        },
+        {
+          empId: "111",
+          empName: "sudarshan",
+          empSkillSet: "React JS",
+          empJobBand: "2"
+        },
+        {
+          empId: "4",
+          empName: "ranjith",
+          empSkillSet: "React JS",
+          empJobBand: "1.1"
+        },
+        {
+          empId: "98",
+          empName: "rajiv",
+          empSkillSet: "management",
+          empJobBand: "3.2"
+        },
+        {
+          empId: "2",
+          empName: "sachin",
+          empSkillSet: "cricket",
+          empJobBand: "10"
+        },
+        {
+          empId: "2",
+          empName: "sachin",
+          empSkillSet: "cricket",
+          empJobBand: "10"
+        }
+      ];
+
+
+      let result = "";
+      for (var i = 0; i < arrObj.length; i++) {
+        result += "<p>" + arrObj[i]['empId'] + ", " + arrObj[i]['empName'] + "</p>\n";
+      }
+
+      document.getElementById("disp").innerHTML = result;
+
+// Remove duplicates from Array
+
+      function removeDuplicates(data) {
+        alert("hi");
+
+        return data.filter((value, index) => data.indexOf(value) === index);
+      }
+      console.lOg(removeDuplicates(arrObj));
+
+    </script>
+  </body>
+
+</html>
